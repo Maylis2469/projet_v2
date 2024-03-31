@@ -26,10 +26,27 @@ class MoviesResponseItem {
   @JsonKey(name : 'runtime')
   final String temps;
 
-  MoviesResponseItem (this.titre,this.date,this.temps);
+ @JsonKey(name: 'image')
+ final MoviesResponseurl affiche;
+
+  MoviesResponseItem (this.titre,this.date,this.temps,this.affiche);
 
   factory MoviesResponseItem .fromJson(Map<String, dynamic> json) =>
       _$MoviesResponseItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$MoviesResponseItemToJson(this);
+}
+
+@JsonSerializable()
+class MoviesResponseurl {
+  @JsonKey(name: 'small_url')
+  final String url;
+
+
+  MoviesResponseurl(this.url);
+
+  factory MoviesResponseurl.fromJson(Map<String, dynamic> json) =>
+      _$MoviesResponseurlFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MoviesResponseurlToJson(this);
 }

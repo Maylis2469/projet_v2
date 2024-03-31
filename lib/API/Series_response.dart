@@ -28,27 +28,26 @@ class SeriesResponseItem {
   @JsonKey(name : 'start_year')
   final String debut;
 
-   //@JsonKey(name: 'publisher')
-  //final SeriesResponseLien maison;
+   @JsonKey(name: 'image')
+  final SeriesResponseLien affiche;
 
-  SeriesResponseItem (this.titre,this.debut);
+  SeriesResponseItem (this.titre,this.debut,this.affiche);
 
   factory SeriesResponseItem .fromJson(Map<String, dynamic> json) =>
       _$SeriesResponseItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$SeriesResponseItemToJson(this);
 }
-
-/*@JsonSerializable()
+@JsonSerializable()
 class SeriesResponseLien {
-  @JsonKey(name: 'name')
-  final String edition;
+  @JsonKey(name: 'small_url')
+  final String url;
 
 
-  SeriesResponseLien (this.edition);
+  SeriesResponseLien (this.url);
 
   factory SeriesResponseLien .fromJson(Map<String, dynamic> json) =>
       _$SeriesResponseLienFromJson(json);
 
   Map<String, dynamic> toJson() => _$SeriesResponseLienToJson(this);
-}*/
+}

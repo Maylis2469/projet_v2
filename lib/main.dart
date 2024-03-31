@@ -144,12 +144,12 @@ class _BottomNavigationBarExampleState
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.book),
-              label: 'Business',
+              label: 'Comics',
               backgroundColor: myColor.botombar,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.tv),
-              label: 'School',
+              label: 'Films',
               backgroundColor: myColor.botombar,
             ),
             BottomNavigationBarItem(

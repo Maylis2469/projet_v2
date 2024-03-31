@@ -23,6 +23,7 @@ MoviesResponseItem _$MoviesResponseItemFromJson(Map<String, dynamic> json) =>
       json['name'] as String,
       json['release_date'] as String,
       json['runtime'] as String,
+      MoviesResponseurl.fromJson(json['image'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MoviesResponseItemToJson(MoviesResponseItem instance) =>
@@ -30,4 +31,15 @@ Map<String, dynamic> _$MoviesResponseItemToJson(MoviesResponseItem instance) =>
       'release_date': instance.date,
       'name': instance.titre,
       'runtime': instance.temps,
+      'image': instance.affiche,
+    };
+
+MoviesResponseurl _$MoviesResponseurlFromJson(Map<String, dynamic> json) =>
+    MoviesResponseurl(
+      json['small_url'] as String,
+    );
+
+Map<String, dynamic> _$MoviesResponseurlToJson(MoviesResponseurl instance) =>
+    <String, dynamic>{
+      'small_url': instance.url,
     };

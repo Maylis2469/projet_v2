@@ -22,10 +22,22 @@ SeriesResponseItem _$SeriesResponseItemFromJson(Map<String, dynamic> json) =>
     SeriesResponseItem(
       json['name'] as String,
       json['start_year'] as String,
+      SeriesResponseLien.fromJson(json['image'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SeriesResponseItemToJson(SeriesResponseItem instance) =>
     <String, dynamic>{
       'name': instance.titre,
       'start_year': instance.debut,
+      'image': instance.affiche,
+    };
+
+SeriesResponseLien _$SeriesResponseLienFromJson(Map<String, dynamic> json) =>
+    SeriesResponseLien(
+      json['small_url'] as String,
+    );
+
+Map<String, dynamic> _$SeriesResponseLienToJson(SeriesResponseLien instance) =>
+    <String, dynamic>{
+      'small_url': instance.url,
     };

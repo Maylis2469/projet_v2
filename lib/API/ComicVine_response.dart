@@ -26,7 +26,10 @@ class CharactersResponseItem {
   @JsonKey(name : 'cover_date')
   final String publication;
 
-  CharactersResponseItem(this.tome,this.numtome,this.publication);
+  @JsonKey(name: 'image')
+  final CharactersResponseurl affiche;
+
+  CharactersResponseItem(this.tome,this.numtome,this.publication,this.affiche);
 
   factory CharactersResponseItem.fromJson(Map<String, dynamic> json) =>
       _$CharactersResponseItemFromJson(json);
@@ -39,10 +42,26 @@ class CharactersResponseImage {
   @JsonKey(name: 'name')
   final String titre;
 
+
   CharactersResponseImage(this.titre);
 
   factory CharactersResponseImage.fromJson(Map<String, dynamic> json) =>
       _$CharactersResponseImageFromJson(json);
 
   Map<String, dynamic> toJson() => _$CharactersResponseImageToJson(this);
+}
+
+
+@JsonSerializable()
+class CharactersResponseurl {
+  @JsonKey(name: 'small_url')
+  final String url;
+
+
+  CharactersResponseurl(this.url);
+
+  factory CharactersResponseurl.fromJson(Map<String, dynamic> json) =>
+      _$CharactersResponseurlFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CharactersResponseurlToJson(this);
 }
